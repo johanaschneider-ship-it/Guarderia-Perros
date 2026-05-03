@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La mejor guardería para tu mejor amigo. Cuidado, juegos y mucho amor para tu perro.">
+    <title>Guardería de Perros | Tu Mascota Feliz</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">🐶 HappyPaws</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#instalaciones">Instalaciones</a></li>
+                <li><a href="#contacto">Reserva</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>El segundo hogar <br>de tu mejor amigo</h1>
+                <p>Cuidado profesional, espacios de juego seguros y mucho amor para tu perro mientras tú no estás.</p>
+                <a href="#contacto" class="cta-button">Reserva un Día</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/podenco_dachshund.png" alt="Podenco jugando con Perro Salchicha" />
+            </div>
+        </section>
+
+        <section id="servicios" class="services">
+            <h2>Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card" onclick="mostrarRutas()" style="cursor: pointer;">
+                    <div class="icon">🏃‍♂️</div>
+                    <h3>Paseos y Ejercicio</h3>
+                    <p><strong>¡Haz clic aquí!</strong> para ver ejemplos de nuestras rutas de paseo.</p>
+                    <div id="rutas-info" style="display:none; margin-top:15px; text-align:left; background:#fff; padding:15px; border-radius:10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <strong>📍 Rutas de Ejemplo:</strong>
+                        <ul style="margin-left: 20px; font-size:0.9rem; color:#555; margin-top:10px;">
+                            <li style="margin-bottom:8px;">🌳 <em>Ruta del Parque:</em> 45 mins. Terreno suave, ideal para socializar.</li>
+                            <li style="margin-bottom:8px;">⛰️ <em>Ruta del Sendero:</em> 1.5 horas. Ejercicio intenso en la naturaleza.</li>
+                            <li>🏘️ <em>Ruta Urbana:</em> 30 mins. Paseo tranquilo por el barrio.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card" onclick="mostrarJuegos()" style="cursor: pointer;">
+                    <div class="icon">🎾</div>
+                    <h3>Zona de Juegos</h3>
+                    <p><strong>¡Ver fotos!</strong> Amplios espacios al aire libre para socializar bajo supervisión.</p>
+                    <div id="juegos-info" style="display:none; margin-top:15px;">
+                        <img src="images/zona_juegos.png" alt="Zona de juegos" style="width:100%; border-radius:10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+                
+                <div class="service-card" onclick="mostrarPeluqueria()" style="cursor: pointer;">
+                    <div class="icon">🛁</div>
+                    <h3>Spa y Peluquería</h3>
+                    <p><strong>¡Ver fotos!</strong> Baño, corte de pelo y limpieza para que vuelva impecable.</p>
+                    <div id="peluqueria-info" style="display:none; margin-top:15px;">
+                        <img src="images/peluqueria_happypaws.png" alt="Spa y Peluquería HappyPaws" style="width:100%; border-radius:10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="instalaciones" class="services" style="background-color: var(--light-bg); padding-top: 2rem;">
+            <h2>Nuestras Casetas</h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem auto; color: #555;">Contamos con opciones de casetas individuales interiores climatizadas y casetas al aire libre completamente protegidas para el máximo confort y seguridad de tu mascota.</p>
+            <div class="services-grid" style="max-width: 1000px; margin: 0 auto;">
+                <div style="text-align: center;">
+                    <img src="images/casetas.png" alt="Casetas Interiores" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                    <h4 style="margin-top: 1rem; color: var(--dark-bg);">Casetas Interiores Climatizadas</h4>
+                </div>
+                <div style="text-align: center;">
+                    <img src="images/casetas_exterior.png" alt="Casetas Exteriores" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                    <h4 style="margin-top: 1rem; color: var(--dark-bg);">Casetas al Aire Libre Protegidas</h4>
+                </div>
+            </div>
+        </section>
+
+        <section id="tarifas" class="services" style="padding-top: 2rem;">
+            <h2>Nuestras Tarifas</h2>
+            <div style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 1rem 0;">
+                        <span><strong>Perro Pequeño</strong> (Hasta 10kg)</span>
+                        <span style="color: var(--secondary-color); font-weight: bold;">$20 / día</span>
+                    </li>
+                    <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 1rem 0;">
+                        <span><strong>Perro Mediano</strong> (10kg - 25kg)</span>
+                        <span style="color: var(--secondary-color); font-weight: bold;">$25 / día</span>
+                    </li>
+                    <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 1rem 0;">
+                        <span><strong>Perro Grande</strong> (Más de 25kg)</span>
+                        <span style="color: var(--secondary-color); font-weight: bold;">$30 / día</span>
+                    </li>
+                    <li style="display: flex; justify-content: space-between; padding: 1rem 0;">
+                        <span><strong>Comida Premium HappyPaws</strong></span>
+                        <span style="color: var(--secondary-color); font-weight: bold;">+$5 / día</span>
+                    </li>
+                </ul>
+                <p style="font-size: 0.9rem; color: #777; margin-top: 1rem; text-align: center;">Consulta por nuestros descuentos especiales para estancias prolongadas.</p>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact">
+            <h2>Reserva y Presupuesto</h2>
+            <p>Calcula el precio exacto y reserva la estadía de tu mejor amigo de forma rápida.</p>
+            
+            <form class="contact-form" id="reservaForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tu Nombre</label>
+                        <input type="text" required placeholder="Ej: Juan Pérez">
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre de tu Perro</label>
+                        <input type="text" required placeholder="Ej: Max">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Raza</label>
+                        <select id="raza" required onchange="toggleOtraRaza()">
+                            <option value="">Selecciona una raza...</option>
+                            <option value="mestizo">Mestizo / Criollo</option>
+                            <option value="akita">Akita</option>
+                            <option value="basset">Basset Hound</option>
+                            <option value="beagle">Beagle</option>
+                            <option value="bichon">Bichón Frisé / Maltés</option>
+                            <option value="border_collie">Border Collie</option>
+                            <option value="boston">Boston Terrier</option>
+                            <option value="boxer">Boxer</option>
+                            <option value="bulldog">Bulldog (Inglés/Francés)</option>
+                            <option value="bull_terrier">Bull Terrier</option>
+                            <option value="caniche">Caniche / Poodle</option>
+                            <option value="chihuahua">Chihuahua</option>
+                            <option value="cocker">Cocker Spaniel</option>
+                            <option value="corgi">Corgi</option>
+                            <option value="dachshund">Dachshund (Perro Salchicha)</option>
+                            <option value="dalmata">Dálmata</option>
+                            <option value="doberman">Doberman</option>
+                            <option value="galgo">Galgo / Podenco</option>
+                            <option value="golden">Golden Retriever</option>
+                            <option value="gran_danes">Gran Danés</option>
+                            <option value="husky">Husky Siberiano</option>
+                            <option value="labrador">Labrador Retriever</option>
+                            <option value="mastin">Mastín</option>
+                            <option value="pastor_aleman">Pastor Alemán</option>
+                            <option value="pastor_belga">Pastor Belga</option>
+                            <option value="pitbull">Pitbull / Amstaff</option>
+                            <option value="pointer">Pointer / Braco</option>
+                            <option value="pomerania">Pomerania</option>
+                            <option value="pug">Pug / Carlino</option>
+                            <option value="rottweiler">Rottweiler</option>
+                            <option value="samoyedo">Samoyedo</option>
+                            <option value="schnauzer">Schnauzer</option>
+                            <option value="setter">Setter</option>
+                            <option value="sharpei">Shar Pei</option>
+                            <option value="shiba">Shiba Inu</option>
+                            <option value="shihtzu">Shih Tzu</option>
+                            <option value="terrier">Terrier (Otros)</option>
+                            <option value="yorkshire">Yorkshire Terrier</option>
+                            <option value="otro">Otra Raza (Especificar)</option>
+                        </select>
+                        <input type="text" id="otraRazaInput" placeholder="Especifica la raza..." style="display: none; margin-top: 10px;">
+                    </div>
+                    <div class="form-group">
+                        <label>Tamaño / Peso</label>
+                        <select id="peso" required>
+                            <option value="pequeno">Pequeño (Hasta 10kg) - $20/día</option>
+                            <option value="mediano">Mediano (10kg - 25kg) - $25/día</option>
+                            <option value="grande">Grande (Más de 25kg) - $30/día</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Alimentación</label>
+                        <select id="comida" required>
+                            <option value="trae">Llevo mi propia comida ($0)</option>
+                            <option value="guarderia">Comida HappyPaws (+$5/día)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Sociabilidad</label>
+                        <select id="sociabilidad" required>
+                            <option value="">Selecciona una opción...</option>
+                            <option value="muy_sociable">Muy sociable (juega con todos)</option>
+                            <option value="timido">Tímido / Reservado</option>
+                            <option value="no_sociable">No sociable (requiere espacio separado)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Salud / Medicación</label>
+                        <select id="salud" required>
+                            <option value="">Selecciona una opción...</option>
+                            <option value="sano">Sano (Sin medicación)</option>
+                            <option value="medicado">Toma medicación diaria</option>
+                            <option value="cuidados">Requiere cuidados especiales</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="visibility: hidden;">
+                        <!-- Placeholder -->
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Día de Ingreso</label>
+                        <input type="date" id="fechaInicio" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Día de Salida</label>
+                        <input type="date" id="fechaFin" required>
+                    </div>
+                </div>
+
+                <div class="price-calculator">
+                    <h3>Presupuesto Estimado</h3>
+                    <div class="price-display">
+                        Total: <span id="precioTotal">$0</span>
+                    </div>
+                    <p class="price-details" id="detallePrecio">Selecciona las fechas para calcular el precio automáticamente.</p>
+                </div>
+
+                <button type="submit" class="cta-button" style="width:100%; margin-top:20px;">Confirmar y Enviar Reserva</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // Mostrar Peluqueria
+        function mostrarPeluqueria() {
+            const info = document.getElementById('peluqueria-info');
+            info.style.display = info.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Mostrar Zona de Juegos
+        function mostrarJuegos() {
+            const info = document.getElementById('juegos-info');
+            info.style.display = info.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Mostrar Rutas
+        function mostrarRutas() {
+            const info = document.getElementById('rutas-info');
+            info.style.display = info.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Toggle Otra Raza Input
+        function toggleOtraRaza() {
+            const razaSelect = document.getElementById('raza');
+            const otraRazaInput = document.getElementById('otraRazaInput');
+            if (razaSelect.value === 'otro') {
+                otraRazaInput.style.display = 'block';
+                otraRazaInput.required = true;
+            } else {
+                otraRazaInput.style.display = 'none';
+                otraRazaInput.required = false;
+            }
+        }
+
+        // Lógica del Formulario y Precios
+        const pesoSelect = document.getElementById('peso');
+        const comidaSelect = document.getElementById('comida');
+        const fechaInicio = document.getElementById('fechaInicio');
+        const fechaFin = document.getElementById('fechaFin');
+        const precioTotal = document.getElementById('precioTotal');
+        const detallePrecio = document.getElementById('detallePrecio');
+        const form = document.getElementById('reservaForm');
+
+        const preciosBase = {
+            'pequeno': 20,
+            'mediano': 25,
+            'grande': 30
+        };
+
+        function calcularPrecio() {
+            if (!fechaInicio.value || !fechaFin.value) return;
+            
+            const inicio = new Date(fechaInicio.value);
+            const fin = new Date(fechaFin.value);
+            
+            if (fin < inicio) {
+                precioTotal.textContent = '$0';
+                detallePrecio.textContent = 'Por favor, asegúrate que la fecha de salida sea posterior al ingreso.';
+                return;
+            }
+
+            const diferenciaTiempo = fin.getTime() - inicio.getTime();
+            const dias = Math.ceil(diferenciaTiempo / (1000 * 3600 * 24)) || 1;
+            
+            const tarifaDiaria = preciosBase[pesoSelect.value];
+            const costoComidaDiaria = comidaSelect.value === 'guarderia' ? 5 : 0;
+
+            const totalDia = tarifaDiaria + costoComidaDiaria;
+            const total = totalDia * dias;
+
+            precioTotal.textContent = '$' + total;
+            detallePrecio.textContent = dias + ' día(s) x $' + totalDia + '/día (Base: $' + tarifaDiaria + ' + Comida: $' + costoComidaDiaria + ')';
+        }
+
+        // Restringir fechas pasadas
+        const hoy = new Date().toISOString().split('T')[0];
+        fechaInicio.min = hoy;
+        fechaFin.min = hoy;
+
+        pesoSelect.addEventListener('change', calcularPrecio);
+        comidaSelect.addEventListener('change', calcularPrecio);
+        fechaInicio.addEventListener('change', calcularPrecio);
+        fechaFin.addEventListener('change', calcularPrecio);
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('¡Guau! 🐾 Tu solicitud ha sido enviada con un presupuesto estimado de ' + precioTotal.textContent + '. Nos pondremos en contacto contigo pronto.');
+            form.reset();
+            precioTotal.textContent = '$0';
+            detallePrecio.textContent = 'Selecciona las fechas para calcular el precio automáticamente.';
+            document.getElementById('otraRazaInput').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
