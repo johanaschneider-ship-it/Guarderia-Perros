@@ -91,19 +91,19 @@
                 <ul style="list-style: none; padding: 0;">
                     <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 1rem 0;">
                         <span><strong>Perro Pequeño</strong> (Hasta 10kg)</span>
-                        <span style="color: var(--secondary-color); font-weight: bold;">$20 / día</span>
+                        <span style="color: var(--secondary-color); font-weight: bold;">20€ / día</span>
                     </li>
                     <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 1rem 0;">
                         <span><strong>Perro Mediano</strong> (10kg - 25kg)</span>
-                        <span style="color: var(--secondary-color); font-weight: bold;">$25 / día</span>
+                        <span style="color: var(--secondary-color); font-weight: bold;">25€ / día</span>
                     </li>
                     <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 1rem 0;">
                         <span><strong>Perro Grande</strong> (Más de 25kg)</span>
-                        <span style="color: var(--secondary-color); font-weight: bold;">$30 / día</span>
+                        <span style="color: var(--secondary-color); font-weight: bold;">30€ / día</span>
                     </li>
                     <li style="display: flex; justify-content: space-between; padding: 1rem 0;">
                         <span><strong>Comida Premium HappyPaws</strong></span>
-                        <span style="color: var(--secondary-color); font-weight: bold;">+$5 / día</span>
+                        <span style="color: var(--secondary-color); font-weight: bold;">+5€ / día</span>
                     </li>
                 </ul>
                 <p style="font-size: 0.9rem; color: #777; margin-top: 1rem; text-align: center;">Consulta por nuestros descuentos especiales para estancias prolongadas.</p>
@@ -176,9 +176,9 @@
                     <div class="form-group">
                         <label>Tamaño / Peso</label>
                         <select id="peso" required>
-                            <option value="pequeno">Pequeño (Hasta 10kg) - $20/día</option>
-                            <option value="mediano">Mediano (10kg - 25kg) - $25/día</option>
-                            <option value="grande">Grande (Más de 25kg) - $30/día</option>
+                            <option value="pequeno">Pequeño (Hasta 10kg) - 20€/día</option>
+                            <option value="mediano">Mediano (10kg - 25kg) - 25€/día</option>
+                            <option value="grande">Grande (Más de 25kg) - 30€/día</option>
                         </select>
                     </div>
                 </div>
@@ -187,8 +187,8 @@
                     <div class="form-group">
                         <label>Alimentación</label>
                         <select id="comida" required>
-                            <option value="trae">Llevo mi propia comida ($0)</option>
-                            <option value="guarderia">Comida HappyPaws (+$5/día)</option>
+                            <option value="trae">Llevo mi propia comida (0€)</option>
+                            <option value="guarderia">Comida HappyPaws (+5€/día)</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -231,7 +231,7 @@
                 <div class="price-calculator">
                     <h3>Presupuesto Estimado</h3>
                     <div class="price-display">
-                        Total: <span id="precioTotal">$0</span>
+                        Total: <span id="precioTotal">0€</span>
                     </div>
                     <p class="price-details" id="detallePrecio">Selecciona las fechas para calcular el precio automáticamente.</p>
                 </div>
@@ -295,7 +295,7 @@
             const fin = new Date(fechaFin.value);
             
             if (fin < inicio) {
-                precioTotal.textContent = '$0';
+                precioTotal.textContent = '0€';
                 detallePrecio.textContent = 'Por favor, asegúrate que la fecha de salida sea posterior al ingreso.';
                 return;
             }
@@ -309,8 +309,8 @@
             const totalDia = tarifaDiaria + costoComidaDiaria;
             const total = totalDia * dias;
 
-            precioTotal.textContent = '$' + total;
-            detallePrecio.textContent = dias + ' día(s) x $' + totalDia + '/día (Base: $' + tarifaDiaria + ' + Comida: $' + costoComidaDiaria + ')';
+            precioTotal.textContent = total + '€';
+            detallePrecio.textContent = dias + ' día(s) x ' + totalDia + '€/día (Base: ' + tarifaDiaria + '€ + Comida: ' + costoComidaDiaria + '€)';
         }
 
         // Restringir fechas pasadas
@@ -327,7 +327,7 @@
             e.preventDefault();
             alert('¡Guau! 🐾 Tu solicitud ha sido enviada con un presupuesto estimado de ' + precioTotal.textContent + '. Nos pondremos en contacto contigo pronto.');
             form.reset();
-            precioTotal.textContent = '$0';
+            precioTotal.textContent = '0€';
             detallePrecio.textContent = 'Selecciona las fechas para calcular el precio automáticamente.';
             document.getElementById('otraRazaInput').style.display = 'none';
         });
